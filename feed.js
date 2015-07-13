@@ -5,7 +5,6 @@ MakeSocial.Feed = function(args) {
         me: "rw",
         connections: "r",
         public: "r"
-        
     };
 
     if(!args.owner)
