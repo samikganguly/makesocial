@@ -27,3 +27,5 @@ build/Release
 node_modules
 /nbproject/private/
 /nbproject/
+/MakeSocialApp/nbproject/private/
+/MakeSocial/
