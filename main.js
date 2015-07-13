@@ -1,4 +1,4 @@
-var Express = require('/home/samik/node_modules/express');
+var Express = require('./express');
 var Feed = require('./feed');
 var app = new Express();
 app.get('/feed', function(rq, rs){
