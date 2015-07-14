@@ -12,17 +12,26 @@ app.get('/feed', function(rq, rs){
             new Feed({
                 owner: "Mrityunjoy Mukherjee",
                 type: "image",
-                content: "http://makesocial.in/media/images/001.jpg"
+                content: {
+                    link: "http://makesocial.in/media/images/001.jpg",
+                    desc: "my first image"
+                }
             }),
             new Feed({
                 owner: "Tanushree Mukherjee",
                 type: "video",
-                content: "http://makesocial.in/media/video/001.mp4"
+                content: {
+                    link: "http://makesocial.in/media/video/001.mp4",
+                    desc: "a cool video"
+                }
             }),
             new Feed({
                 owner: "Samik Ganguly",
                 type: "image",
-                content: "http://google.com"
+                content: {
+                    link: "http://google.com",
+                    desc: "World's best search engine"
+                }
             })
         ];
         var feeds = [];
