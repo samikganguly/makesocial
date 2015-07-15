@@ -1,6 +1,7 @@
 var Express = require('./express');
 var Feed = require('./feed');
 var app = new Express();
+app.use(Express.static(__dirname + "/client"));
 app.get('/feed', function(rq, rs){
     try {
         var sampleFeeds = [
