@@ -1,3 +1,4 @@
+var listenPort = process.argv[2] || 8180;
 var Path = require('path');
 var Express = require('./express');
 var Feed = require('./feed');
@@ -47,4 +48,4 @@ app.get('/feed', function(rq, rs){
         rs.status(500).end();
     }
 });
-app.listen(8180);
+app.listen(listenPort);
