@@ -28,7 +28,7 @@ and open the template in the editor.
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
    // $http.get("http://www.w3schools.com/angular/customers.php")
-    $http.get("http://localhost:8180/feed")
+    $http.get("feed")
     .success(function(response) {
         //$scope.names = response.records;
 
