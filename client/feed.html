@@ -16,28 +16,68 @@ and open the template in the editor.
         <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <ul>
-  <li ng-repeat="x in names">
-    {{ x.timestamp + ', ' + x.owner }}
-  </li>
+  <div ng-repeat="x in names">
+     
+      
+      
+      <div ng-if="x.type=='text'">
+         <div ng-include="'feed_txt_cell.html'"></div>
+     </div>
+      
+       <div ng-if="x.type=='image'">
+         <div ng-include="'feed_img_cell.html'"></div>
+       </div>
+      
+       <div ng-if="x.type=='video'">
+         <div ng-include="'feed_img_cell.html'"></div>
+       </div>
+<!--    {{ x.timestamp + ', ' + x.owner }}-->
+  </div>
 </ul>
 
 </div>
         
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+
+<script src="/js/angular.min.js"></script>
+
+<script src="DataSource.js"></script>
 <script>
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $http) {
-   // $http.get("http://www.w3schools.com/angular/customers.php")
-    $http.get("feed")
-    .success(function(response) {
-        //$scope.names = response.records;
+    var app = angular.module('myApp', []);
+    app.controller('customersCtrl', function($scope, $http) {
+       // $http.get("http://www.w3schools.com/angular/customers.php")
+        $http.get("feed")
+        .success(function(response) {
+            //$scope.names = response.records;
 
-        $scope.names = response;
+            $scope.names = response;
 
-        console.log(response);
-        
+            //console.log(response);
+
+        });
     });
-});
+    
+    
+    
+    
+    function sum(){
+        var length=arguments.length;
+        var sum=0;
+        for(var i=0;i<length;i++){
+            sum+=arguments[i];
+        }
+        
+        return sum;
+    }
+    
+    
+    var myObj = new MyClass(); // new object instance
+
+    myObj.setValue1("My first oops class struvture");
+    console.log(myObj.publicMethod());
+    
+    
+    //MyClass.staticMethod();
 </script>
     </body>
 </html>
