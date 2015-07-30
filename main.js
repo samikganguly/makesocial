@@ -1,8 +1,8 @@
 var listenPort = process.argv[2] || 8180;
 var Path = require('path');
 var Express = require('./express');
-var Feed = require('./feed.js');
-var Album = require('./album.js');
+var Feed = require('./feed');
+var Album = require('./album');
 var app = new Express();
 app.use(Express.static(Path.normalize(__dirname + "/client")));
 app.get('/feed', function(rq, rs){
